@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Horses{% endblock %}
+
+{% block content %}
+
+<h1>Horse List</h1>
+
+{% for horse in horses %}
+    <h2>
+        <a href="{% url 'blog:horse_detail' horse.id %}">
+            {{ horse.name }}
+        </a>
+    </h2>
+
+    <p><strong>Breed:</strong> {{ horse.breed }}</p>
+    <p><strong>Origin:</strong> {{ horse.origin }}</p>
+    <p><strong>Color:</strong> {{ horse.color }}</p>
+
+    <p>{{ horse.description|truncatewords:30 }}</p>
+{% empty %}
+    <p>No horses available.</p>
+{% endfor %}
+
+{% endblock %}

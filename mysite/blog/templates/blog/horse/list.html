@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Horse Breeds{% endblock %}
+
+{% block content %}
+<h2>All Horses</h2>
+<hr>
+
+{% for horse in horses %}
+    <h3><a href="{{ horse.id }}/">{{ horse.name }}</a></h3>
+    <p><strong>Breed:</strong> {{ horse.breed }}</p>
+    <p><strong>Origin:</strong> {{ horse.origin }}</p>
+    <p><strong>Color:</strong> {{ horse.color }}</p>
+    <hr>
+{% endfor %}
+{% endblock %}

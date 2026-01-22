@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ horse.name }}{% endblock %}
+
+{% block content %}
+
+<h1>{{ horse.name }}</h1>
+
+<p><strong>Breed:</strong> {{ horse.breed }}</p>
+<p><strong>Origin:</strong> {{ horse.origin }}</p>
+<p><strong>Color:</strong> {{ horse.color }}</p>
+
+<p>{{ horse.description }}</p>
+
+<a href="{% url 'blog:horse_list' %}">← Back to Horses</a>
+
+{% endblock %}

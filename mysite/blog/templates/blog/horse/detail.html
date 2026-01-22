@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ horse.name }}{% endblock %}
+
+{% block content %}
+<h2>{{ horse.name }}</h2>
+<p><strong>Breed:</strong> {{ horse.breed }}</p>
+<p><strong>Origin:</strong> {{ horse.origin }}</p>
+<p><strong>Color:</strong> {{ horse.color }}</p>
+
+<p>{{ horse.description }}</p>
+
+<a href="/">← Back</a>
+{% endblock %}
